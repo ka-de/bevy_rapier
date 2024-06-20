@@ -5,7 +5,7 @@ authors = ["Sébastien Crozet <developer@crozet.re>"]
 description = "3-dimensional physics engine in Rust, official Bevy plugin."
 documentation = "http://docs.rs/bevy_rapier3d"
 homepage = "http://rapier.rs"
-repository = "https://github.com/dimforge/bevy_rapier"
+repository = "https://github.com/ka-de/bevy_rapier"
 readme = "../README.md"
 keywords = ["physics", "dynamics", "rigid", "real-time", "joints"]
 license = "Apache-2.0"
@@ -22,18 +22,18 @@ default = ["dim3", "async-collider", "debug-render-3d"]
 dim3 = []
 debug-render = ["debug-render-3d"]
 debug-render-2d = [
-    "bevy/bevy_core_pipeline",
-    "bevy/bevy_sprite",
-    "bevy/bevy_gizmos",
-    "rapier3d/debug-render",
-    "bevy/bevy_asset",
+  "bevy/bevy_core_pipeline",
+  "bevy/bevy_sprite",
+  "bevy/bevy_gizmos",
+  "rapier3d/debug-render",
+  "bevy/bevy_asset",
 ]
 debug-render-3d = [
-    "bevy/bevy_core_pipeline",
-    "bevy/bevy_pbr",
-    "bevy/bevy_gizmos",
-    "rapier3d/debug-render",
-    "bevy/bevy_asset",
+  "bevy/bevy_core_pipeline",
+  "bevy/bevy_pbr",
+  "bevy/bevy_gizmos",
+  "rapier3d/debug-render",
+  "bevy/bevy_asset",
 ]
 parallel = ["rapier3d/parallel"]
 simd-stable = ["rapier3d/simd-stable"]
@@ -45,7 +45,7 @@ headless = []
 async-collider = ["bevy/bevy_asset", "bevy/bevy_scene"]
 
 [dependencies]
-bevy = { version = "0.14.0-rc.3", default-features = false }
+bevy = { git = "https://github.com/bevyengine/bevy", default-features = false }
 nalgebra = { version = "0.32.6", features = ["convert-glam027"] }
 rapier3d = "0.20"
 bitflags = "2.4"
@@ -53,10 +53,10 @@ log = "0.4"
 serde = { version = "1", features = ["derive"], optional = true }
 
 [dev-dependencies]
-bevy = { version = "0.14.0-rc.3", default-features = false, features = [
-    "x11",
-    "tonemapping_luts",
-    "bevy_state",
+bevy = { git = "https://github.com/bevyengine/bevy", default-features = false, features = [
+  "x11",
+  "tonemapping_luts",
+  "bevy_state",
 ] }
 approx = "0.5.1"
 glam = { version = "0.27", features = ["approx"] }
